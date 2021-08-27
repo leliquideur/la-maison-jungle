@@ -12,3 +12,10 @@
 .lmj-footer-elem {
 	margin-bottom: 10px;
 }
+
+.lmj-footer-elem-alert {
+	padding: 20px;
+	background-color: #f44336; /* Red */
+	color: white;
+	margin-bottom: 10px;
+  }

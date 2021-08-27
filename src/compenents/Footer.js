@@ -18,7 +18,7 @@ function Footer() {
                     onChange={(e) => checkValue(e.target.value)}
                     onBlur={(e) => checkValueAt(e.target.value)}
                 />
-                <div className='lmj-footer-elem' visibility={hide} style={{visibility: hide ? 'visible' : 'hidden' }} >"Mauvais format d'email"</div>
+                <div className='lmj-footer-elem-alert' style={{visibility: hide ? 'visible' : 'hidden' }} >"Mauvais format d'email"</div>
                 <button onClick={() => alert(inputValue) } disabled={disable}>Alertez moi 🚨</button>
 		</footer>
 	)
