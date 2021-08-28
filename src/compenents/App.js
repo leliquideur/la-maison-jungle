@@ -15,6 +15,7 @@ function App() {
 				<h1 className='lmj-title'>La maison jungle</h1>
 			</Banner>
 			<div className='lmj-layout-inner'>
+				
 				<Cart cart={cart} updateCart={updateCart} />
                 <ShoppingList cart={cart} updateCart={updateCart} />
 			</div>
