@@ -1,10 +1,14 @@
 import '../styles/Cart.css'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
+
 function Cart({cart, updateCart }) {
   const [isOpen, setIsOpen] = useState(true)
   const totalPrice = cart.reduce(
 		(acc, plantType) => acc + plantType.amount * plantType.price,
 		0)
+  useEffect(() => {
+    document.title = `LMJ: ${totalPrice}€ d'achats`
+  },[totalPrice])
 
     function removeToCart(name, price) {
       const currentPlantSaved = cart.find((plant) => plant.name === name)
@@ -29,7 +33,6 @@ function Cart({cart, updateCart }) {
       <div className='lmj-cart'>
           <button className='lmj-cart-toggle-button' onClick={() => setIsOpen(false)}>Fermer</button>
           <h2>Panier</h2>
-
           <div className='lmj-cart-toggle-item'>
             <ul>
               {cart.map(({ name, price, amount }, index) => (
@@ -37,21 +40,8 @@ function Cart({cart, updateCart }) {
                   {name} {price}€ x {amount}
                   <button onClick={() => removeToCart(name,price)}>-1</button>
                 </div>
-
               ))}
-
             </ul>
-            {/*
-            <div> 
-              {monsteraName} Prix : {monsteraPrice}€ x {cart}<br />
-            </div>
-            <div className='lmj-cart-toggle-item-button'>
-              <button onClick={() => updateCart(cart + 1)}>
-                  +1
-              </button>
-
-            </div>*/}
-
           </div>
           <h3>Total : {totalPrice}€</h3>
           <button onClick={() => updateCart([])}>
