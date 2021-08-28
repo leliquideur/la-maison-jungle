@@ -38,6 +38,7 @@ export const plantList = [
 	},
 	{
 		name: 'olivier',
+		cover: 'https://cdn.shopify.com/s/files/1/0109/7079/1998/products/3fe74427c936dbf51174792513f3150b_395x395_crop_center.jpg?v=1628636883',
 		category: 'extérieur',
 		id: '5pl',
 		light: 3,

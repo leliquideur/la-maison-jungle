@@ -26,7 +26,7 @@ function ShoppingList({ cart, updateCart }) {
 	function plantListAffichage(){
 			return (
 				plantList.map(({ id, cover, name, water, light, price, category }) => ((activeCategory===category||!activeCategory)?(
-				<div key={id}>
+				<div key={id} className='lmj-plant-list-itemButton'>
 					<PlantItem
 						cover={cover}
 						name={name}
@@ -34,7 +34,7 @@ function ShoppingList({ cart, updateCart }) {
 						light={light}
 						price={price}
 					/>
-					<button onClick={() => addToCart(name, price)}>Ajouter</button>
+					<button className='lmj-plant-list-button' onClick={() => addToCart(name, price)}>+1</button>
 				</div>):(null)
 				))
 			)
